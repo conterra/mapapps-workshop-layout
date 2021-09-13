@@ -1,0 +1,9 @@
+/*Kopfzeilen Hintergrundfarbe*/
+.ctAppRoot .ct-application-header {
+    background: #003064;
+}
+
+/*Kartenhintergrund abdunkeln umfärben*/
+.ctAppRoot .ctMap {
+    background-color: #3c3c3c;
+}

@@ -1,0 +1,13 @@
+/* Styles for seasons template */
+@import url('seasons_desktop.css');
+/* The following styles can be skipped if responsiveness is not needed */
+@import url('seasons_responsive.css');
+
+
+/* very basic css settings. Former part of templates/common/common.css*/
+.fullwidthAndHeight {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
