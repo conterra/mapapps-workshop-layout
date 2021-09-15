@@ -13,8 +13,8 @@ Die folgenden Schritte beschreiben, wie Sie das map.apps Theme **"theme-happy"**
 {
     "name": "theme-happy",
     "version": "1.0.0",
-    "title": "Theme SH",
-    "description": "This bundle provides the theme 'sh'. This theme fits best with the seasons layout template and can be used for customization.",
+    "title": "Theme Happy",
+    "description": "This bundle provides the theme 'happy'. This theme fits best with the seasons layout template and can be used for customization.",
     "vendor": "con terra GmbH",
     "keywords": ["layout"],
     "main": "",
