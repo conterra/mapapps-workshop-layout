@@ -1,0 +1,70 @@
+{
+    "name": "basemapchanger",
+    "version": "1.0.0",
+    "title": "${bundleName}",
+    "description": "${bundleDescription}",
+    "dependencies": {
+        "esri": "^4.10.0",
+        "apprt-vue": "^4.7.0",
+        "apprt-vuetify": "^4.7.0"
+    },
+    "layout-widgets": [
+        {
+            "widgetRole": "basemapChangerWidget",
+            "template": "seasons",
+            "window": {
+                "title": "${ui.windowTitle}",
+                "autofocus": false,
+                "dockTool": "basemapChangerToggleTool",
+                "minimizeOnClose": true,
+                "marginBox": {
+                    "w": 355,
+                    "h": 455,
+                    "b": 100,
+                    "l": 50
+                }
+            }
+        }
+    ],
+    "CSS-Themes-Extension": [
+        {
+            "name": "*",
+            "files": [
+                "./css/styles.css"
+            ]
+        }
+    ],
+    "components": [
+        {
+            "name": "BasemapChangerWidgetFactory",
+            "provides": [
+                "dijit.Widget",
+                "maptest.Widget"
+            ],
+            "instanceFactory": true,
+            "properties": {
+                "widgetRole": "basemapChangerWidget"
+            },
+            "references": []
+        },
+        {
+            "name": "BasemapChangerToggleTool",
+            "impl": "ct/tools/Tool",
+            "provides": [
+                "ct.tools.Tool"
+            ],
+            "propertiesConstructor": true,
+            "properties": {
+                "id": "basemapChangerToggleTool",
+                "title": "${tool.title}",
+                "tooltip": "${tool.tooltip}",
+                "iconClass": "icon-star-o",
+                "toolRole": "toolset",
+                "togglable": true,
+                "rules": {
+                    "noGroup": true
+                }
+            }
+        }
+    ]
+}
