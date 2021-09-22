@@ -1,0 +1,17 @@
+<div class="fullwidthAndHeight">
+    <div data-dojo-attach-point="template_root">
+        <div data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="gutters:false,design:'sidebar','class':'fullwidthAndHeight'">
+            <div data-dojo-type="ct/ui/template/OverlayContainer" data-dojo-props="region:'center','class':'ct-application-center mainMap'">
+                <div data-dojo-type="dijit/layout/ContentPane" data-dojo-attach-point="mapPlaceHolder"></div>
+                <div class="map_main" data-dojo-attach-point="map_main"></div>
+                <div class="map_topleft" data-dojo-attach-point="map_topleft"></div>
+                <div class="map_topright" data-dojo-attach-point="map_topright"></div>
+                <div class="map_bottomright" data-dojo-attach-point="map_bottomright"></div>
+                <div class="map_bottomleft" data-dojo-attach-point="map_bottomleft"></div>
+            </div>
+            <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'left','class':'ct-application-sidebar noPadding'" data-dojo-attach-point="sidebar_left" >
+                <div id="${id}-dockingBarLeft" data-dojo-type="windowmanager/WindowDockingBar" data-dojo-props="'class':'dockingBarLeft',toggleMode:true,toolSortIds:['followmeToggleTool','mobileTocToggleTool','overviewmap','basemapgalleryToggleTool','legendToggleTool','searchToggleTool','routing']"></div>
+            </div>
+        </div>
+    </div>
+</div>
