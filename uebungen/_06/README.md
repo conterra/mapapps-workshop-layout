@@ -43,3 +43,152 @@
 Nun können die in den Übungen LAY03, LAY04 und LAY05 gemachten Änderungen aus der app.json in die manifest.json des *alternatelayout* Bundle **verschoben** werden. Es muss sichergestellt sein, dass die **Einträge aus der app.json Datei entfernt sind**.
 
 Der Abschnitt layout-widgets innerhalb der manifest.json Sollte dann wie folgt aussehen:
+
+*manifest.json*
+```javascript
+{
+    "name": "layoutcontainer",
+        "title": "Layoutcontainer Layout",
+        "description": "",
+        "version": "1.0.0",
+
+
+        "CSS-Themes-Extension": [{
+        "name": "*",
+        "files": ["./css/styles.css"]
+    }],
+        "layout-widgets": [
+        {
+            "widgetRole": "basemapChangerWidget",
+            "priority":2,
+            "sublayout": [
+                "desktop"
+            ],
+            "window": {
+                "marginBox": {
+                    "t": 40,
+                    "b": 40,
+                    "r": 0,
+                    "w": 500
+                },
+                "fixEdgesInViewPort": {
+                    "l": false
+                },
+                "closable": false,
+                "collapsable": true,
+                "collapseAxis": {
+                    "l": true
+                }
+            }
+        },
+        {
+            "widgetRole": "drawer_button",
+            "attachTo": "map_topleft",
+            "sublayout": [
+                "desktop"
+            ],
+            "priority":2,
+            "props": {
+                "layoutIndex": 0
+            }
+        },
+        {
+            "widgetRole": "sharelink",
+            "sublayout": [
+                "desktop"
+            ],
+            "priority":2,
+            "window": {
+                "dockable": false,
+                "dockingBar": null
+            }
+        },
+        {
+            "widgetRole": "legend",
+            "priority":2,
+            "sublayout": [
+                "mobile_portrait",
+                "mobile_landscape"
+            ],
+            "window": {
+                "dockable": false,
+                "dockingBar": null
+            }
+        },
+
+        {
+            "widgetRole": "banner",
+            "priority":2,
+            "sublayout": [
+                "mobile_portrait"
+            ],
+            "attachTo": "map_topleft"
+        },
+        {
+            "widgetRole": "banner",
+            "priority":2,
+            "sublayout": [
+                "desktop"
+            ],
+            "attachTo": "map_bottomleft"
+        },
+
+        {
+            "widgetRole":"coordinateviewer",
+            "priority":2,
+            "sublayout": [
+                "desktop"
+            ],
+            "attachTo": "map_topright",
+            "cssClass": "background-highlight padding-default"
+        },
+        {
+            "widgetRole": "coordinateviewer",
+            "priority":2,
+            "sublayout": [
+                "tablet_landscape",
+                "tablet_portrait",
+                "mobile_landscape",
+                "mobile_portrait"
+            ],
+            "attachTo": "map_bottomleft"
+        }  ,
+
+
+        {
+            "widgetRole": "printing",
+            "priority":2,
+            "sublayout": [
+                "desktop"
+            ],
+            "window": {
+                "title": "This is my custom Window Title",
+                "marginBox": {
+                    "w": 550,
+                    "h": 550
+                },
+                "resizable": false
+            }
+        },
+        {
+            "widgetRole": "printing",
+            "priority":2,
+            "sublayout": [
+                "tablet_landscape",
+                "tablet_portrait"
+            ],
+            "window": {
+                "draggable": false,
+                "dndDraggable": false,
+                "marginBox": {
+                    "l": 20,
+                    "w": 300,
+                    "t": 120,
+                    "b": 60
+                }
+            }
+        }
+
+    ]
+}
+```

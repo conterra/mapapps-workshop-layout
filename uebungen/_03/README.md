@@ -68,25 +68,8 @@
                                     "resizable": false
                                 }
                             },
-                            {
-                                "widgetRole": "printing",
-                                "sublayout": ["tablet_landscape","tablet_portrait"],
-                                "window": {
-                                    "draggable": false,
-                                    "dndDraggable": false,
-                                    "marginBox": {
-                                        "l": 20,
-                                        "w": 300,
-                                        "t": 120,
-                                        "b": 60
-                                    }
-                                }
-                            },
-                            {
-                                "widgetRole": "coordinateviewer",
-                                "sublayout": ["tablet_landscape","tablet_portrait","mobile_landscape","mobile_portrait"],
-                                "attachTo": "map_bottomleft"
-                            },
+                   
+                       
                             {
                                 "widgetRole": "banner",
                                 "sublayout": [
