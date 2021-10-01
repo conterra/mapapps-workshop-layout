@@ -1,6 +1,6 @@
-## Layoutworkshop
+# map.apps Workshop Layout
 
-### Übungen 
+## Übungen 
  
 - [LAY01 -Layout gestalten mit CSS](/uebungen/_01/README.md)
 - [LAY02: Einfügen eigener CSS Anweisungen in einer App](/uebungen/_02/README.md)
