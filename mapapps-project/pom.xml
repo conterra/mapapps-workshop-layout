@@ -49,6 +49,7 @@
             <classifier>dev</classifier>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>org.vuetifyjs</groupId>
             <artifactId>vuetify</artifactId>
@@ -146,8 +147,8 @@
                     <artifactId>frontend-maven-plugin</artifactId>
                     <version>1.10.0</version>
                     <configuration>
-                        <nodeVersion>v14.15.1</nodeVersion>
-                        <npmVersion>6.14.9</npmVersion>
+                        <nodeVersion>v12.16.1</nodeVersion>
+                        <npmVersion>6.13.4</npmVersion>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -383,12 +384,12 @@
         <root.build.outputPath>${project.build.directory}/webapp</root.build.outputPath>
         <js.build.outputPath>${root.build.outputPath}/js</js.build.outputPath>
 
-        <mapapps.version>4.11.1</mapapps.version>
+        <mapapps.version>4.9.1</mapapps.version>
         <!-- JS lib versions -->
         <apprt.version>${mapapps.version}</apprt.version>
         <!-- java lib versions -->
-        <ct.jsregistry.version>1.4.1</ct.jsregistry.version>
-        <ct.jsrt-test.version>2.0.0</ct.jsrt-test.version>
+        <ct.jsregistry.version>1.3.8</ct.jsregistry.version>
+        <ct.jsrt-test.version>1.1.5</ct.jsrt-test.version>
 
         <!-- the default app, replaced in the *.html files to switch app names-->
         <default.app.name>sample</default.app.name>
@@ -403,10 +404,8 @@
         <mvn.cmd>mvn</mvn.cmd>
         <gulp.task></gulp.task>
 
-        <mapapps.user><!-- set correct username for map.apps remote installation--></mapapps.user>
-        <mapapps.pw><!-- set correct password for map.apps remote installation--></mapapps.pw>
-        <!-- set to false if map.apps is configured behind integrated windows authentication is required -->
-        <mapapps.useChunkedRequestEncoding>true</mapapps.useChunkedRequestEncoding>
+        <mapapps.user>admin</mapapps.user>
+        <mapapps.pw>admin</mapapps.pw>
         <!-- enable this if "upload" profile should only deploy bundles -->
         <skip.apps.upload>false</skip.apps.upload>
     </properties>
@@ -631,9 +630,6 @@
         </profile>
         <profile>
             <id>compress</id>
-            <properties>
-                <gulp.task>compress</gulp.task>
-            </properties>
             <build>
                 <plugins>
                     <plugin>
@@ -663,6 +659,23 @@
                                     </jsFiles>
                                 </configuration>
                             </execution>
+                            <execution>
+                                <id>optimize CSS</id>
+                                <goals>
+                                    <goal>optimizeCSS</goal>
+                                </goals>
+                                <phase>compile</phase>
+                                <configuration>
+                                    <cssFiles>
+                                        <includes>
+                                            <include>bundles/*/*/*.css</include>
+                                        </includes>
+                                        <excludes>
+                                            <exclude>**/themeSettings.css</exclude>
+                                        </excludes>
+                                    </cssFiles>
+                                </configuration>
+                            </execution>
                         </executions>
                     </plugin>
                 </plugins>
@@ -682,7 +695,6 @@
                             <serverResourcesEndpoint>${mapapps.remote.base}/resources</serverResourcesEndpoint>
                             <username>${mapapps.user}</username>
                             <password>${mapapps.pw}</password>
-                            <useChunkedRequestEncoding>${mapapps.useChunkedRequestEncoding}</useChunkedRequestEncoding>
                         </configuration>
                     </plugin>
                     <plugin>
@@ -698,7 +710,6 @@
                                     <registryEndpoint>${mapapps.remote.base}/resources/jsregistry</registryEndpoint>
                                     <username>${mapapps.user}</username>
                                     <password>${mapapps.pw}</password>
-                                    <useChunkedRequestEncoding>${mapapps.useChunkedRequestEncoding}</useChunkedRequestEncoding>
                                 </configuration>
                             </execution>
                         </executions>
