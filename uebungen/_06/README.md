@@ -6,7 +6,7 @@
 
 1. Erstellen sie innerhalb des **bundles Verzeichnis** in Visual Studio Code einen Ordner mit dem Namen alternatelayout.
 
-2. Kopieren sie die Datei alternatelayout aus dem Trainings Verzeichnis.
+2. Kopieren sie die Datei alternatelayout aus dem Asset Verzeichnis *assets/bundles/alternatelayout*.
 
 ### Verwenden des Bundles innerhalb der App "sample"
 
@@ -47,8 +47,8 @@ Der Abschnitt layout-widgets innerhalb der manifest.json Sollte dann wie folgt a
 *manifest.json*
 ```javascript
 {
-    "name": "layoutcontainer",
-        "title": "Layoutcontainer Layout",
+    "name": "alternatelayout",
+        "title": "Alternatelayout",
         "description": "",
         "version": "1.0.0",
 
