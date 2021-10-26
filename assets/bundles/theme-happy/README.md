@@ -1,6 +1,6 @@
 # theme-happy
 
-![theme-happy preview](./images/theme_autumn_preview.png)
+![theme-happy preview](images/theme_autumn_preview.png)
  
 Provides a color scheme for map.apps and its dijit widgets.
  
